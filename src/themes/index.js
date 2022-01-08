@@ -1,13 +1,8 @@
 import { createTheme } from '@material-ui/core/styles';
 
 // assets
-import colors from '../assets/scss/_themes-vars.module.scss';
-import theme1 from '../assets/scss/_theme1.module.scss';
-import theme2 from '../assets/scss/_theme2.module.scss';
-import theme3 from '../assets/scss/_theme3.module.scss';
-import theme4 from '../assets/scss/_theme4.module.scss';
-import theme5 from '../assets/scss/_theme5.module.scss';
-import theme6 from '../assets/scss/_theme6.module.scss';
+import colors from '../assets/css/_themes-vars.module.scss';
+// import theme1 from '../assets/scss/_theme1.module.scss';
 
 // project imports
 import { componentStyleOverrides } from './compStyleOverride';
@@ -23,7 +18,7 @@ export function theme(customization) {
     let color;
     switch (customization.presetColor) {
         case 'theme1':
-            color = theme1;
+            // color = theme1;
             break;
         case 'default':
         default:

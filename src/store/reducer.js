@@ -6,7 +6,6 @@ import * as reducers from "./reducers";
 
 const reducer = combineReducers({
   sample: reducers.sampleReducer,
-  snackbar: reducers.snackbarReducer,
 });
 
 export default reducer;

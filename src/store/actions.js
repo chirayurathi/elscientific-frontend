@@ -4,6 +4,7 @@ export const LOGOUT = 'LOGOUT';
 export const ACCOUNT_INITIALIZE = 'ACCOUNT_INITIALIZE';
 export const FIREBASE_STATE_CHANGED = 'FIREBASE_STATE_CHANGED';
 export const SET_MENU = 'SET_MENU';
+export const SOME_ACTION = 'SOME_ACTION'; 
 
 // action - customization reducer
 export const MENU_TOGGLE = '@customization/MENU_TOGGLE';

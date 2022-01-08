@@ -1,8 +1,7 @@
 import {
     SOME_ACTION
   } from "../actions";
-  //-----------------------|| COST CENTER REDUCER ||-----------------------//
-  
+
   // constant
   const initialState = {
     sample:true

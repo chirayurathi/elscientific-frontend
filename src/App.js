@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline, StyledEngineProvider } from '@material-ui/core';
+import { CssBaseline, StyledEngineProvider, Typography } from '@material-ui/core';
 
 // routing
 import Routes from './routes';
@@ -19,18 +19,18 @@ import NavigationScroll from './layout/NavigationScroll';
 const App = () => {
     return (
         <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={theme()}>
+            {/* <ThemeProvider theme={theme()}> */}
                 <CssBaseline />
                 {/* RTL layout */}
                 {/* <RTLLayout> */}
-                <Locales>
+                {/* <Locales> */}
                     <NavigationScroll>
                             <Routes />
-                            <Snackbar />
+                            {/* <Typography>Typography</Typography> */}
                     </NavigationScroll>
-                </Locales>
+                {/* </Locales> */}
                 {/* </RTLLayout> */}
-            </ThemeProvider>
+            {/* </ThemeProvider> */}
         </StyledEngineProvider>
     );
 };

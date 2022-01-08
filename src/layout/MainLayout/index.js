@@ -10,10 +10,9 @@ import { AppBar, CssBaseline, Toolbar, useMediaQuery } from '@material-ui/core';
 import clsx from 'clsx';
 
 // project imports
-import Breadcrumbs from './../../ui-component/extended/Breadcrumbs';
+// import Breadcrumbs from './../../ui-component/extended/Breadcrumbs';
 import Header from './Header';
-import Sidebar from './Sidebar';
-import Customization from './../Customization';
+// import Customization from './../Customization';
 import navigation from './../../menu-items';
 import { drawerWidth } from '../../store/constant';
 import { SET_MENU } from './../../store/actions';
@@ -27,14 +26,15 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex'
     },
     appBar: {
-        backgroundColor: theme.palette.background.default
+        backgroundColor: "rgba(0,0,0,0)"
     },
     appBarWidth: {
         transition: theme.transitions.create('width'),
-        backgroundColor: theme.palette.background.default
+        backgroundColor: "rgba(0,0,0,0)"
     },
     content: {
         ...theme.typography.mainContent,
+        marginTop:'66px',
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         transition: theme.transitions.create('margin', {
@@ -81,47 +81,25 @@ const MainLayout = ({ children }) => {
     const theme = useTheme();
     const matchUpMd = useMediaQuery(theme.breakpoints.up('md'));
 
-    // Handle left drawer
-    const leftDrawerOpened = useSelector((state) => state.customization.opened);
-    const dispatch = useDispatch();
-    const handleLeftDrawerToggle = () => {
-        dispatch({ type: SET_MENU, opened: !leftDrawerOpened });
-    };
-
-    React.useEffect(() => {
-        const openLeftDrawerState = (val) => {
-            dispatch({ type: SET_MENU, opened: val });
-        };
-        openLeftDrawerState(matchUpMd);
-    }, [dispatch, matchUpMd]);
-
     return (
         <div className={classes.root}>
             <CssBaseline />
             {/* header */}
-            <AppBar position="fixed" color="inherit" elevation={0} className={leftDrawerOpened ? classes.appBarWidth : classes.appBar}>
+            <AppBar position="fixed" color="inherit" elevation={0} className={false ? classes.appBarWidth : classes.appBar}>
                 <Toolbar>
-                    <Header handleLeftDrawerToggle={handleLeftDrawerToggle} />
+                    <Header />
                 </Toolbar>
             </AppBar>
-
-            {/* drawer */}
-            <Sidebar drawerOpen={leftDrawerOpened} drawerToggle={handleLeftDrawerToggle} />
-
-            {/* main content */}
             <main
                 className={clsx([
                     classes.content,
                     {
-                        [classes.contentShift]: leftDrawerOpened
+                        [classes.contentShift]: false
                     }
                 ])}
             >
-                {/* breadcrumb */}
-                <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign />
                 <div>{children}</div>
             </main>
-            <Customization />
         </div>
     );
 };

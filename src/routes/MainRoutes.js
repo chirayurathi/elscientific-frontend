@@ -18,9 +18,9 @@ const MainRoutes = () => {
         <Route path={['/sample-page']}>
             <MainLayout>
                 <Switch location={location} key={location.pathname}>
-                    <AuthGuard>
+                    {/* <AuthGuard> */}
                         <Route path="/sample-page" component={SamplePage} />
-                    </AuthGuard>
+                    {/* </AuthGuard> */}
                 </Switch>
             </MainLayout>
         </Route>
