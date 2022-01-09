@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 // material-ui
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -9,53 +8,54 @@ import { AppBar, CssBaseline, Toolbar, useMediaQuery } from '@material-ui/core';
 // third-party
 import clsx from 'clsx';
 
-// project imports
-// import Breadcrumbs from './../../ui-component/extended/Breadcrumbs';
 import Header from './Header';
-// import Customization from './../Customization';
-import navigation from './../../menu-items';
-import { drawerWidth } from '../../store/constant';
-import { SET_MENU } from './../../store/actions';
 
-// assets
-import { IconChevronRight } from '@tabler/icons';
-
-// style constant
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex'
+        boxSizing:'border-box',
+        margin:0,
+        padding:0,
+        overflow:'hidden'
+    },
+    toolbar:{
+        justifyContent:"space-between",
     },
     appBar: {
-        backgroundColor: "rgba(0,0,0,0)"
+        backgroundColor: "rgba(0,0,0,0)",
+        padding:"10px",
+        boxSizing:"border-box",
+        height:"12vh"
     },
     appBarWidth: {
         transition: theme.transitions.create('width'),
-        backgroundColor: "rgba(0,0,0,0)"
+        backgroundColor: "rgba(0,0,0,0)",
+        padding:"10px",
+        boxSizing:"border-box",
+        height:"12vh"
     },
     content: {
         ...theme.typography.mainContent,
-        marginTop:'66px',
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen
         }),
-        [theme.breakpoints.up('md')]: {
-            marginLeft: -(drawerWidth - 20),
-            width: `calc(100% - ${drawerWidth}px)`
-        },
-        [theme.breakpoints.down('md')]: {
-            marginLeft: '20px',
-            width: `calc(100% - ${drawerWidth}px)`,
-            padding: '16px'
-        },
-        [theme.breakpoints.down('sm')]: {
-            marginLeft: '10px',
-            width: `calc(100% - ${drawerWidth}px)`,
-            padding: '16px',
-            marginRight: '10px'
-        }
+        // [theme.breakpoints.up('md')]: {
+        //     marginLeft: -(drawerWidth - 20),
+        //     width: `calc(100% - ${drawerWidth}px)`
+        // },
+        // [theme.breakpoints.down('md')]: {
+        //     marginLeft: '20px',
+        //     width: `calc(100% - ${drawerWidth}px)`,
+        //     padding: '16px'
+        // },
+        // [theme.breakpoints.down('sm')]: {
+        //     marginLeft: '10px',
+        //     width: `calc(100% - ${drawerWidth}px)`,
+        //     padding: '16px',
+        //     marginRight: '10px'
+        // }
     },
     contentShift: {
         transition: theme.transitions.create('margin', {
@@ -85,8 +85,8 @@ const MainLayout = ({ children }) => {
         <div className={classes.root}>
             <CssBaseline />
             {/* header */}
-            <AppBar position="fixed" color="inherit" elevation={0} className={false ? classes.appBarWidth : classes.appBar}>
-                <Toolbar>
+            <AppBar position="relative" color="inherit" elevation={0} className={false ? classes.appBarWidth : classes.appBar}>
+                <Toolbar className={classes.toolbar}>
                     <Header />
                 </Toolbar>
             </AppBar>

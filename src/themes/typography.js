@@ -4,7 +4,7 @@
  */
 export function themeTypography(theme) {
     return {
-        fontFamily: theme.customization.fontFamily,
+        fontFamily: 'Inter, sans-serif',
         h6: {
             fontWeight: 500,
             color: theme.heading,
