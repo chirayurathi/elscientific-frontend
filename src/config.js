@@ -1,7 +1,7 @@
 const config = {
     basename: '',
-    defaultPath: '/sample-page',
-    fontFamily: `'Roboto', sans-serif`,
+    defaultPath: '/home',
+    fontFamily: `'Inter', sans-serif`,
     borderRadius: 12,
     outlinedFilled: true,
     theme: 'light',

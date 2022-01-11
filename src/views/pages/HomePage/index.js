@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 
-import Background from "../../assets/images/Background";
+import Background from "../../../assets/images/Background";
 
 // project imports
 
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     padding:'0 10px' 
   }
 }));
-const SamplePage = () => {
+const HomePage = () => {
   const classes = useStyles();
   return (
     <>
@@ -94,4 +94,4 @@ const SamplePage = () => {
   );
 };
 
-export default SamplePage;
+export default HomePage;

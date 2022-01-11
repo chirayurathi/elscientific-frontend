@@ -1,5 +1,7 @@
 import React from "react";
 import Logo from '../../../assets/images/Logo.svg';
+import menuItems from '../../../menu-items'
+
 import {
   Typography,
   makeStyles,
@@ -65,27 +67,26 @@ const Header = () => {
           <DrawerComponent />
         ) : (
           <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              Home
-            </Link>
-            <Link to="/about" className={classes.link}>
-              About
-            </Link>
-            <Link to="/pricing" className={classes.link}>
-              pricing
-            </Link>
-            <Link to="/conferences" className={classes.link}>
-              conferences
-            </Link>
-            <Link to="/contact" className={classes.link}>
-              Contact
-            </Link>
-            <Button variant="contained" href="#contained-buttons" className={classes.loginButton}>
-              Login
-            </Button>
-            <Button variant="contained" href="#contained-buttons" className={[classes.loginButton, classes.signupButton].join(' ')}>
-              Signup
-            </Button>
+            {menuItems
+            .map(e => 
+              (e.type === 'link'?
+              <Link
+                id={e.id} 
+                to={e.url} 
+                className={e.classes.map(c => classes[c]).join(' ')}
+              >
+                {e.title}
+              </Link>
+              :
+              <Button 
+              variant="contained" 
+              href={e.url} 
+              id={e.id} 
+              className={e.classes.map(c => classes[c]).join(' ')}
+              >
+                {e.title}
+              </Button>)
+              )}
           </div>
         )}
             
