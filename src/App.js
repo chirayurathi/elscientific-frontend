@@ -26,7 +26,6 @@ const App = () => {
                 {/* <Locales> */}
                     <NavigationScroll>
                             <Routes />
-                            {/* <Typography>Typography</Typography> */}
                     </NavigationScroll>
                 {/* </Locales> */}
                 {/* </RTLLayout> */}

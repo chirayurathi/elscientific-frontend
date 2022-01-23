@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
         boxSizing:'border-box',
         margin:0,
         padding:0,
-        overflow:'hidden'
     },
     toolbar:{
         justifyContent:"space-between",

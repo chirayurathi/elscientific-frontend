@@ -9,14 +9,16 @@ import InputBase from "@mui/material/InputBase";
 
 import Background from "../../../assets/images/Background";
 
-// project imports
+import Slider from './Slider'
 
-//==============================|| SAMPLE PAGE ||==============================//
+//==============================|| HOME PAGE ||==============================//
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "90vh",
+    marginBottom:"25vh",
     fontFamily: "'Inter', sans-serif",
+    overflow:'visible'
   },
   largeText: {
     color: "#F4F5FC",
@@ -90,6 +92,7 @@ const HomePage = () => {
         </Grid>
         <Grid item sm={7}></Grid>
       </Grid>
+      <Slider />
     </>
   );
 };
