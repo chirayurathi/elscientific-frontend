@@ -10,6 +10,7 @@ import InputBase from "@mui/material/InputBase";
 import Background from "../../../assets/images/Background";
 
 import Slider from './Slider'
+import Features from './Features'
 
 //==============================|| HOME PAGE ||==============================//
 
@@ -93,6 +94,7 @@ const HomePage = () => {
         <Grid item sm={7}></Grid>
       </Grid>
       <Slider />
+      <Features />
     </>
   );
 };
